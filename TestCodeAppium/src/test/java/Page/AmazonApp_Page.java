@@ -9,9 +9,14 @@ import Test.AmazonApp;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
+
 public class AmazonApp_Page extends AmazonApp {
 
+	// instantiate appium driver.
+	
 	AppiumDriver driver;
+
+	// locating mobile elements for Amazon login page.
 	@FindBy(id = "com.amazon.mShop.android.shopping:id/sign_in_button")
 	MobileElement signInButton;
 	@FindBy(id = "ap_email_login")
@@ -26,6 +31,9 @@ public class AmazonApp_Page extends AmazonApp {
 	MobileElement passWord;
 	@FindBy(id = "signInSubmit")
 	MobileElement loginButton;
+
+	// locating mobile elements for Searching Products.
+	
 	@FindBy(id = "com.amazon.mShop.android.shopping:id/rs_search_src_text")
 	MobileElement searchBox;
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ViewAnimator/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView\r\n"
@@ -38,12 +46,17 @@ public class AmazonApp_Page extends AmazonApp {
 			+ "")
 	MobileElement tvTittle;
 	@FindBy(id = "add-to-cart-button")
+
+	// locating mobile elements of Cart Page.
+	
 	MobileElement addToCart;
 	@FindBy(id = "com.amazon.mShop.android.shopping:id/action_bar_cart_image")
 	MobileElement cartOption;
 	@FindBy(id = "add-to-cart-button")
 	MobileElement proceedToBuy;
 
+	// locating mobile elements to Add delivery address.
+	
 	@FindBy(id = "address-ui-widgets-enterAddressFullName")
 	MobileElement fullName;
 	@FindBy(id = "address-ui-widgets-enterAddressPhoneNumber")
@@ -64,6 +77,8 @@ public class AmazonApp_Page extends AmazonApp {
 			+ "")
 	MobileElement addAddress;
 
+	// locating mobile elements in Payment page.
+	
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ViewAnimator/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.view.View[3]/android.widget.Button\r\n"
 			+ "")
 	MobileElement deliveryContinueButton;
@@ -74,11 +89,12 @@ public class AmazonApp_Page extends AmazonApp {
 			+ "")
 	MobileElement paymentContinueButton;
 
+
 	public AmazonApp_Page(AppiumDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
+    
 	public void loginPage(String email, String passCode) {
 		signInButton.click();
 		emailId.click();

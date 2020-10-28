@@ -11,8 +11,10 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class AmazonApp {
+	
+	// instantiate Appium driver.
 	AppiumDriver<MobileElement> driver;
-
+		  
 	@BeforeTest
 	public void setup() throws Exception {
 		DesiredCapabilities cap = new DesiredCapabilities();
