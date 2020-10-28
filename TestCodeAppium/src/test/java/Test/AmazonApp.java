@@ -1,9 +1,12 @@
 package Test;
 
 import java.net.URL;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import Page.AmazonApp_Page;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
@@ -21,6 +24,8 @@ public class AmazonApp {
 		cap.setCapability("appActivity", "");
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		driver = new AppiumDriver<MobileElement>(url, cap);
+		AmazonApp_Page app = PageFactory.initElements(driver, AmazonApp_Page.class);
+		TouchActions action = new TouchActions(driver);
 	}
 
 	@AfterTest
